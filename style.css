@@ -79,7 +79,7 @@ h3 { font-size: 16px; }
 
 a { text-decoration: none; color: inherit; }
 button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
-img { max-width: 100%; }
+img { max-width: 100%; height: auto; }
 ::selection { background: var(--button); color: var(--on-button); }
 
 /* ---------- accessibility ---------- */
