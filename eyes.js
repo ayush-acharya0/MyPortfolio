@@ -8,6 +8,9 @@
     const pupils = document.querySelectorAll('.pupil');
     if (!pupils.length) return;
 
+    // reduced motion: leave the eyes centred and still
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const items = [...pupils].map(el => ({ el, cx: 0, cy: 0, tx: 0, ty: 0 }));
     let pointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     let raf = null;

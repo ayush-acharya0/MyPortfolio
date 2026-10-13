@@ -18,6 +18,7 @@ The light theme is a warm paper palette (`#F7F5F0 / #F1EEE7 / #E7E3D9` with `#DC
 - 🌗 Light / dark theme toggle, remembered in `localStorage`
 - 📱 Responsive, with the sidebar collapsing into a floating top bar under 930px
 - ✨ Scroll-reveal animations and scroll-spy nav highlighting
+- ⌨️ Keyboard friendly: skip link, visible focus rings, and `prefers-reduced-motion` honored by the eyes, spotlight and reveals
 
 ## Pinned projects
 
@@ -42,9 +43,12 @@ Opening `index.html` straight in a browser works too.
 ## Files
 
 ```
-index.html   : sidebar nav + hero, about, projects, contact
-style.css    : design tokens, layout, themes, animations
-eyes.js      : the cursor-tracking pupils
-script.js    : theme, menu, filters, scroll effects, copy email
-image.png    : hero character illustration
+index.html          : sidebar nav + hero, about, projects, contact
+style.css           : design tokens, layout, themes, animations
+eyes.js             : the cursor-tracking pupils (parked under reduced motion)
+script.js           : theme, menu, filters, spotlight, scroll effects
+image.webp          : hero character illustration (672KB PNG down to 32KB WebP)
+favicon.svg         : tab icon
+apple-touch-icon.png: icon for phone home screens
+og.png              : 1200x630 share card for link previews
 ```

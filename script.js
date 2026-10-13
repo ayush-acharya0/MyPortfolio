@@ -8,6 +8,8 @@
 
     const $  = (sel, ctx = document) => ctx.querySelector(sel);
     const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+    const reduceMotion = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* ---------------- theme toggle ---------------- */
     const root = document.documentElement;
@@ -101,7 +103,7 @@
         cards.forEach(card => {
             const show = category === 'all' || card.dataset.category === category;
             card.classList.toggle('hide', !show);
-            if (show) {
+            if (show && !reduceMotion) {
                 // re-trigger the entrance animation
                 card.classList.remove('in');
                 requestAnimationFrame(() => requestAnimationFrame(() => card.classList.add('in')));
@@ -110,7 +112,7 @@
     }));
 
     /* ---------------- card spotlight (cursor-following light) ---------------- */
-    $$('.card').forEach(card => {
+    if (!reduceMotion) $$('.card').forEach(card => {
         card.addEventListener('pointermove', (e) => {
             const r = card.getBoundingClientRect();
             card.style.setProperty('--mx', `${e.clientX - r.left}px`);

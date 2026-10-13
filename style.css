@@ -82,6 +82,26 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 img { max-width: 100%; }
 ::selection { background: var(--button); color: var(--on-button); }
 
+/* ---------- accessibility ---------- */
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: var(--sm);
+    z-index: 100;
+    padding: var(--xs) var(--sm);
+    background: var(--button);
+    color: var(--on-button);
+    border-radius: var(--radius-xs);
+    font-size: 14px;
+    transition: top .3s var(--transition);
+}
+.skip-link:focus { top: var(--sm); }
+
+:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 2px;
+}
+
 /* ---------- layout ---------- */
 .layout {
     display: grid;
