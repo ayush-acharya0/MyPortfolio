@@ -1,14 +1,7 @@
-// -----------------------------------------------------------
-// Eyes that follow the cursor
-// Pupils are centred with translate(-50%, -50%) and then eased
-// toward the pointer, so they scale with the responsive layout
-// and glide instead of snapping.
-// -----------------------------------------------------------
 (() => {
     const pupils = document.querySelectorAll('.pupil');
     if (!pupils.length) return;
 
-    // reduced motion: leave the eyes centred and still
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const items = [...pupils].map(el => ({ el, cx: 0, cy: 0, tx: 0, ty: 0 }));
@@ -24,12 +17,10 @@
             const dy = pointer.y - (rect.top + rect.height / 2);
             const angle = Math.atan2(dy, dx);
 
-            // travel up to ~24% of the eye's size toward the cursor
             const radius = rect.width * 0.24;
             it.tx = Math.cos(angle) * radius;
             it.ty = Math.sin(angle) * radius;
 
-            // ease into position for a natural, alive feel
             it.cx += (it.tx - it.cx) * 0.16;
             it.cy += (it.ty - it.cy) * 0.16;
 

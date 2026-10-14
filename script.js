@@ -1,8 +1,3 @@
-// -----------------------------------------------------------
-// Portfolio interactions:
-// theme toggle · mobile menu · scroll reveal · scroll-spy ·
-// project filters · card spotlight
-// -----------------------------------------------------------
 (() => {
     'use strict';
 
@@ -49,7 +44,6 @@
         menuBtn && menuBtn.setAttribute('aria-expanded', 'false');
     }));
 
-    // close the mobile menu when clicking outside it
     document.addEventListener('click', (e) => {
         if (!sidebar.classList.contains('open')) return;
         if (sidebar.contains(e.target) || menuBtn.contains(e.target)) return;

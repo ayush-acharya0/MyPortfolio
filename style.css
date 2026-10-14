@@ -1,12 +1,4 @@
-/* ============================================================
-   Ayush Acharya | Developer Portfolio
-   Design language inspired by kolejain.com
-   (warm paper palette, hairline strokes, Fraunces + DM Sans,
-   no gradients, no drop shadows)
-   ============================================================ */
-
 :root {
-    /* light: warm paper palette (no pure white) */
     --bg-1: #F7F5F0;
     --bg-2: #F1EEE7;
     --bg-3: #E7E3D9;
@@ -18,7 +10,6 @@
     --bg-success: #DCEFD6;
     --success: #1E7A18;
 
-    /* scale */
     --xxxs: 2px;  --xxs: 4px;  --xms: 6px;  --xs: 8px;
     --sm: 12px;   --md: 16px;  --lg: 24px;  --xl: 32px;
     --xxl: 48px;  --xxxl: 64px;
@@ -31,7 +22,6 @@
     --transition: cubic-bezier(.075, .82, .165, 1);
     --sidebar-w: 232px;
 
-    /* type */
     --font-display: 'Fraunces', 'DM Sans', Georgia, serif;
     --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
@@ -102,7 +92,7 @@ img { max-width: 100%; height: auto; }
     outline-offset: 2px;
 }
 
-/* ---------- layout ---------- */
+
 .layout {
     display: grid;
     grid-template-columns: var(--sidebar-w) 1fr;
@@ -111,7 +101,7 @@ img { max-width: 100%; height: auto; }
     background: var(--bg-2);
 }
 
-/* ---------- sidebar ---------- */
+
 .sidebar {
     position: sticky;
     top: 0;
@@ -538,7 +528,6 @@ svg.fill-icon { fill: currentColor; stroke: none; }
 
 .card h3 a { color: inherit; text-decoration: none; }
 .card h3 a:hover { color: var(--subtext); }
-/* title arrow that slides in on hover */
 .card h3 a::after {
     content: "↗";
     display: inline-block;
@@ -558,7 +547,6 @@ svg.fill-icon { fill: currentColor; stroke: none; }
     flex: 1;
 }
 
-/* featured (first) card */
 .card-featured { padding: var(--lg); gap: var(--sm); }
 .card-featured h3 { font-size: clamp(24px, 3vw, 34px); letter-spacing: -0.5px; }
 .card-featured p { font-size: 15px; max-width: 58ch; }
@@ -583,7 +571,6 @@ svg.fill-icon { fill: currentColor; stroke: none; }
     color: var(--stroke);
 }
 
-/* "everything else" archive card */
 .card-cta {
     justify-content: space-between;
     gap: var(--sm);
